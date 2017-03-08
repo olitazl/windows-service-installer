@@ -16,6 +16,10 @@
             <email>mail@alexkasko.com</email>
             <url>http://alexkasko.com</url>
         </developer>
+        <developer>
+            <name>Oliver Tazl</name>
+            <email>oliver.tazl@gmail.com</email>
+        </developer>
     </developers>
 
 </project>

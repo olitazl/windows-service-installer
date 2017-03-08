@@ -1,4 +1,4 @@
-package com.alexkasko.installer;
+package eu.tazl.installer;
 
 /**
  * Interface for clients launched class to daemonize

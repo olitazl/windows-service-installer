@@ -1,4 +1,4 @@
-package com.alexkasko.installer;
+package eu.tazl.installer;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.maven.plugin.AbstractMojo;

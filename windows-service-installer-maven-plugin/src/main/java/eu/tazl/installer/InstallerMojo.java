@@ -1,4 +1,4 @@
-package com.alexkasko.installer;
+package eu.tazl.installer;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
@@ -52,6 +52,8 @@ import static ru.concerteza.util.io.CtzResourceUtils.path;
  * @phase package
  * @requiresDependencyResolution runtime
  */
+
+@Mojo(name= "bla")
 public class InstallerMojo extends SettingsMojo {
     private final FreemarkerEngine freemarker = new FreemarkerEngine();
     private final MarkExecutableFunction markExecutableFunction = new MarkExecutableFunction();

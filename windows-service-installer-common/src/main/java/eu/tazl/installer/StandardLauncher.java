@@ -1,4 +1,4 @@
-package com.alexkasko.installer;
+package eu.tazl.installer;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;

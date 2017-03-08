@@ -19,7 +19,7 @@
     </developers>
 
     <properties>
-        <service.main.class>com.alexkasko.installer.testapp.Launcher</service.main.class>
+        <service.main.class>eu.tazl.installer.testapp.Launcher</service.main.class>
     </properties>
 
     <dependencies>
@@ -49,7 +49,7 @@
             <plugin>
                 <!-- to be tun with "mvn windows-service-installer:installer" -->
                 <groupId>${project.groupId}</groupId>
-                <artifactId>maven-windows-service-installer-plugin</artifactId>
+                <artifactId>windows-service-installer-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <dependencies>
                     <dependency>

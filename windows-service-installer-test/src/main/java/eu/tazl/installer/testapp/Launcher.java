@@ -1,6 +1,6 @@
-package com.alexkasko.installer.testapp;
+package eu.tazl.installer.testapp;
 
-import com.alexkasko.installer.DaemonLauncher;
+import eu.tazl.installer.DaemonLauncher;
 
 import java.util.Date;
 
