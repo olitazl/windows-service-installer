@@ -40,7 +40,7 @@
     </properties>
 
     <modules>
-        <module>maven-windows-service-installer-plugin</module>
+        <module>windows-service-installer-maven-plugin</module>
         <module>windows-service-installer-test</module>
         <module>windows-service-installer-common</module>
     </modules>
@@ -53,8 +53,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>2.3.1</version>
                     <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
+                        <source>1.8</source>
+                        <target>1.8</target>
                     </configuration>
                 </plugin>
                 <plugin>
