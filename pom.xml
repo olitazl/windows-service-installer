@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.alexkasko.installer</groupId>
+    <groupId>eu.tazl.installer</groupId>
     <artifactId>windows-service-installer-parent</artifactId>
     <version>1.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -20,9 +20,9 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/alexkasko/windows-service-installer</url>
-        <connection>scm:git:https://github.com/alexkasko/windows-service-installer.git</connection>
-        <developerConnection>scm:git:https://github.com/alexkasko/windows-service-installer.git</developerConnection>
+        <url>https://github.com/olitazl/windows-service-installer</url>
+        <connection>scm:git:https://github.com/olitazl/windows-service-installer.git</connection>
+        <developerConnection>scm:git:https://github.com/olitazl/windows-service-installer.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     <developers>
@@ -31,11 +31,15 @@
             <email>mail@alexkasko.com</email>
             <url>http://alexkasko.com</url>
         </developer>
+        <developer>
+            <name>Oliver Tazl</name>
+            <email>oliver.tazl@gmail.com</email>
+        </developer>
     </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.specification_vendor>Alex Kasko</project.specification_vendor>
+        <project.specification_vendor>Oliver Tazl</project.specification_vendor>
         <project.implementation_vendor>${project.specification_vendor}</project.implementation_vendor>
     </properties>
 
@@ -51,7 +55,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.3.1</version>
+                    <version>3.6.1</version>
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
@@ -61,11 +65,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.7</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>3.4</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
