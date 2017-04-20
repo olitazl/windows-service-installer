@@ -17,7 +17,8 @@ import java.util.List;
  * Supertype for plugin, encapsulates settings
  *
  * @author alexkasko
- * Date: 5/3/12
+ * @author olitazl
+ * Date: 2017/04/19
  */
 public abstract class SettingsMojo extends AbstractMojo {
     // Application parameters
@@ -366,27 +367,11 @@ public abstract class SettingsMojo extends AbstractMojo {
      */
     protected File distOutputFile;
     /**
-     * Freemarker work directory
-     *
-     * @parameter default-value="${project.build.directory}/freemarker"
-     * @readonly
-     */
-    protected File freemarkerDir;
-     /**
-     * Launcher project base dir
-     *
-     * @parameter default-value="${project.baseDir}"
-     * @readonly
-     */
-    protected File baserDir;
-    /**
      * @parameter default-value="${project}"
      * @required
      * @readonly
      */
     protected MavenProject project;
-
-    // getters for freemarker
 
     public String getIzpackAppName() {
         return izpackAppName;

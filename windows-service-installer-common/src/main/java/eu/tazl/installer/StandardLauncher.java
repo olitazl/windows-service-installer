@@ -7,11 +7,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * Actual daemon launcher that will delegate application startup/shutdown to client launcher
  *
  * @author alexkasko
- * Date: 5/2/12
+ * @author olitazl
+ * Date: 2017/04/06
  */
 public class StandardLauncher {
     // AtomicReference just in case, daemon should never be started or stopped more than once during JVM lifetime
-    private static final AtomicReference<DaemonLauncher> HOLDER = new AtomicReference<DaemonLauncher>();
+    private static final AtomicReference<DaemonLauncher> HOLDER = new AtomicReference<>();
     private static final CountDownLatch LATCH = new CountDownLatch(1);
 
     /**

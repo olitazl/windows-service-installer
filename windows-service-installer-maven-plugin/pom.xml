@@ -8,7 +8,7 @@
     </parent>
     <artifactId>windows-service-installer-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <name>Maven Windows Service Installer Plugin</name>
+    <name>Windows Service Installer Maven Plugin</name>
 
     <developers>
         <developer>
@@ -19,6 +19,7 @@
         <developer>
           <name>Oliver Tazl</name>
           <email>oliver.tazl@gmail.com</email>
+            <url>http://tazl.eu</url>
         </developer>
     </developers>
 
@@ -44,14 +45,12 @@
             <artifactId>izpack-standalone-compiler</artifactId>
             <version>4.3.5</version>
         </dependency>
-        <!--
         <dependency>
-            <groupId>ru.concerteza.util</groupId>
-            <artifactId>ctz-utils</artifactId>
-            <version>2.10</version>
+            <groupId>org.zeroturnaround</groupId>
+            <artifactId>zt-zip</artifactId>
+            <version>1.11</version>
+            <type>jar</type>
         </dependency>
-        -->
-
         <dependency>
             <groupId>com.github.spullara.mustache.java</groupId>
             <artifactId>compiler</artifactId>
@@ -87,6 +86,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
             <version>1.13</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.tazl.installer</groupId>
+            <artifactId>windows-service-installer-common</artifactId>
+            <version>1.0.7-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

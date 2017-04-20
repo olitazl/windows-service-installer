@@ -7,7 +7,7 @@
     <artifactId>windows-service-installer-parent</artifactId>
     <version>1.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Maven Windows Service Installer Plugin Parent</name>
+    <name>Windows Service Installer Maven Plugin Parent</name>
 
     <description>
         Maven plugin to build installers with Windows service support.
@@ -34,6 +34,7 @@
         <developer>
             <name>Oliver Tazl</name>
             <email>oliver.tazl@gmail.com</email>
+            <url>http://tazl.eu</url>
         </developer>
     </developers>
 
