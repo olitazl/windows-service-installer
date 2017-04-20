@@ -54,7 +54,7 @@
             <fileset dir="jre" targetdir="$INSTALL_PATH/jre"/>
         </pack>
         {{#izpackAdditionalPacks}}
-            {{izpackAdditionalPacks}}
+            {{.}}
         {{/izpackAdditionalPacks}}
         <pack name="{{izpackWindowsServicePackName}}" required="no" preselected="yes" installGroups="windows_service_pack">
             <os family="windows"/>

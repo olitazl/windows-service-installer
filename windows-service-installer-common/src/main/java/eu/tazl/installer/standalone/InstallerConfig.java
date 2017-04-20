@@ -269,9 +269,9 @@ public class InstallerConfig {
     }
 
 
-    public String getIzpackAdditionalPacks() {
+    public List<String> getIzpackAdditionalPacks() {
         try {
-            return IOUtils.readLines(new InputStreamReader(loader.getResource(izpackAdditionalPacksPath).getInputStream())).toString();
+            return IOUtils.readLines(new InputStreamReader(loader.getResource(izpackAdditionalPacksPath).getInputStream()));
         } catch (IOException e) {
             throw new RuntimeException("IzpackAdditionalPacks: Loading failed");
         }

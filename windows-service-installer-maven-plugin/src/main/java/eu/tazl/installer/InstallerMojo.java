@@ -2,11 +2,11 @@ package eu.tazl.installer;
 
 import eu.tazl.installer.standalone.InstallerBuilder;
 import eu.tazl.installer.standalone.InstallerConfig;
-import eu.tazl.installer.standalone.InstallerConfigBuilder;
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -26,7 +26,7 @@ import static org.apache.commons.io.IOUtils.copyLarge;
  * @requiresDependencyResolution runtime
  */
 
-public class InstallerMojo extends SettingsMojo implements InstallerConfigBuilder {
+public class InstallerMojo extends SettingsMojo {
 
     /**
      * Plugin entry point
@@ -36,14 +36,14 @@ public class InstallerMojo extends SettingsMojo implements InstallerConfigBuilde
      */
     public void execute() throws MojoExecutionException, MojoFailureException {
             InstallerConfig config = getInstallerConfig();
-
-
+            List<String> bla = config.getIzpackAdditionalPacks();
+        System.out.println(bla.isEmpty());
             InstallerBuilder builder = new InstallerBuilder(config);
             builder.execute();
     }
 
     @SuppressWarnings("unchecked")
-    public InstallerConfig getInstallerConfig() {
+    private InstallerConfig getInstallerConfig() {
         Set<Artifact> set = project.getArtifacts();
 
         return new InstallerConfig(izpackAppFilesPackName, izpackAppFilesPackDescription, izpackJREPackName, izpackJREPackDescription,
