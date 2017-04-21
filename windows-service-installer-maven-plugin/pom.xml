@@ -89,7 +89,7 @@
         </dependency>
         <dependency>
             <groupId>eu.tazl.installer</groupId>
-            <artifactId>windows-service-installer-common</artifactId>
+            <artifactId>windows-service-installer-standalone</artifactId>
             <version>1.0.7-SNAPSHOT</version>
         </dependency>
     </dependencies>

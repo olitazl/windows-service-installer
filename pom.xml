@@ -46,6 +46,7 @@
 
     <modules>
         <module>windows-service-installer-maven-plugin</module>
+        <module>windows-service-installer-standalone</module>
         <module>windows-service-installer-test</module>
         <module>windows-service-installer-common</module>
     </modules>

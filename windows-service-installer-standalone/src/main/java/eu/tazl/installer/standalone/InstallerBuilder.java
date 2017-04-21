@@ -3,7 +3,9 @@ package eu.tazl.installer.standalone;
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
+import com.google.gson.Gson;
 import com.izforge.izpack.compiler.CompilerConfig;
+import org.apache.commons.cli.*;
 import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -334,5 +336,29 @@ public class InstallerBuilder  {
             this.lib = lib;
             this.uninstall = uninstall;
         }
+    }
+
+    public static void main(String[] args) throws ParseException{
+        Options options = new Options();
+        options.addOption("c", true, "config file");
+
+        CommandLineParser parser = new DefaultParser();
+        CommandLine cmd = parser.parse(options, args);
+        try{
+        if(cmd.hasOption("c")){
+            Gson gson = new Gson();
+            InstallerConfig config = gson.fromJson(new FileReader(cmd.getOptionValue("c")), InstallerConfig.class);
+            InstallerBuilder builder = new InstallerBuilder(config);
+            builder.execute();
+        }
+        }catch (Exception ex){
+            ex.printStackTrace();
+
+        } finally {
+            HelpFormatter helpFormatter = new HelpFormatter();
+            helpFormatter.printHelp("builder -c config file", options);
+        }
+
+
     }
 }
