@@ -13,9 +13,9 @@ Plugin usage
 Add common library as a dependency:
 
     <dependency>
-        <groupId>com.alexkasko.installer</groupId>
+        <groupId>eu.tazl.installer</groupId>
         <artifactId>windows-service-installer-common</artifactId>
-        <version>1.0.6</version>
+        <version>1.5.0</version>
     </dependency>
 
 Implement `com.alexkasko.installer.DaemonLauncher` in application launcher class:
@@ -33,14 +33,14 @@ Add plugin to build part of pom file:
 
     <plugin>
         <!-- to be run with "mvn windows-service-installer:installer" -->
-        <groupId>com.alexkasko.installer</groupId>
-        <artifactId>maven-windows-service-installer-plugin</artifactId>
-        <version>1.0.6</version>
+        <groupId>eu.tazl.installer</groupId>
+        <artifactId>windows-service-installer-maven-plugin</artifactId>
+        <version>1.5.0</version>
         <dependencies>
             <dependency>
-                <groupId>com.alexkasko.installer</groupId>
+                <groupId>eu.tazl.installer</groupId>
                 <artifactId>windows-service-installer-common</artifactId>
-                <version>1.0.6</version>
+                <version>1.5.0</version>
             </dependency>
         </dependencies>
         <configuration>
@@ -57,6 +57,13 @@ This project is released under the [Apache License 2.0](http://www.apache.org/li
 
 Changelog
 ---------
+
+**1.5.0** (2017-04-30)
+
+ * New Plugin Name (Maven-conform naming)
+ * Standalone Mode
+ * New template engine
+ * 
 
 **1.0.6** (2014-09-17)
 
