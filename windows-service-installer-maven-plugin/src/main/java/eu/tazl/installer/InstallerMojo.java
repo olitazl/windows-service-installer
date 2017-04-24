@@ -10,9 +10,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static org.apache.commons.io.IOUtils.closeQuietly;
-import static org.apache.commons.io.IOUtils.copyLarge;
-
 
 
 /**
@@ -37,7 +34,6 @@ public class InstallerMojo extends SettingsMojo {
     public void execute() throws MojoExecutionException, MojoFailureException {
             InstallerConfig config = getInstallerConfig();
             List<String> bla = config.getIzpackAdditionalPacks();
-        System.out.println(bla.isEmpty());
             InstallerBuilder builder = new InstallerBuilder(config);
             builder.execute();
     }
