@@ -20,6 +20,7 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -97,20 +98,20 @@ public class InstallerBuilder  {
                     "bin/*");
             List<Resource> list = Arrays.asList(resources);
             MustacheCopyFunction copy = new MustacheCopyFunction(binDir);
-            list.stream().map(copy);
+            list.stream().forEach(copy);
         }
         {
             File daemonDir = new File(binDir, "java-daemon");
             Resource[] daemon = resourcePatternResolver.getResources("classpath:/bin/java-daemon/*");
             CopyFunction copy = new CopyFunction(daemonDir);
-            Arrays.asList(daemon).stream().map(copy);
+            Arrays.asList(daemon).stream().forEach(copy);
         }
     }
 
     private void copyIzpack() throws IOException {
         Resource[] resources = resourcePatternResolver.getResources("classpath:/izpack/*");
         MustacheCopyFunction copy = new MustacheCopyFunction(config.getIzpackDir());
-        Arrays.asList(resources).stream().map(copy).collect(Collectors.toList());
+        Arrays.asList(resources).stream().forEach(copy);
         writeStringToFile(new File(config.getIzpackDir(), "default-install-dir.txt"), config.getIzpackDefaultInstallDir(), "UTF8");
     }
 
@@ -131,7 +132,7 @@ public class InstallerBuilder  {
         MustacheCopyFunction copy = new MustacheCopyFunction(binDir, config.getPrunsrvScriptsEncoding());
 
         List<Resource> filteredList = list.stream().filter(notExe).collect(Collectors.toList());
-        filteredList.stream().map(copy);
+        filteredList.stream().forEach(copy);
 
         String prunsrvPath = config.isUse64BitJre() ? "classpath:/prunsrv/prunsrv_x86_64.exe" : "classpath:/prunsrv/prunsrv_x86_32.exe";
         File prunsrvTarget = new File(binDir, "prunsrv.exe");
@@ -249,7 +250,7 @@ public class InstallerBuilder  {
         }
     }
 
-    private class CopyFunction implements Function<Resource, File> {
+    private class CopyFunction implements Consumer<Resource>, Function<Resource, File> {
         protected final File dir;
 
         private CopyFunction(File dir) {
@@ -259,6 +260,11 @@ public class InstallerBuilder  {
         public File apply(Resource input) {
             File file = new File(dir, input.getFilename());
             return copyResource(input, file);
+        }
+
+        @Override
+        public void accept(Resource input) {
+            apply(input);
         }
     }
 
