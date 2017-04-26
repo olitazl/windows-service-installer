@@ -1,15 +1,15 @@
 package eu.tazl.installer;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import eu.tazl.installer.standalone.InstallerBuilder;
 import eu.tazl.installer.standalone.InstallerConfig;
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
 
 
 /**
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  *
  * @author alexkasko
  * @author olitazl
- * Date: 4/19/12
+ *         Date: 4/19/12
  * @goal installer
  * @phase package
  * @requiresDependencyResolution runtime
@@ -32,10 +32,11 @@ public class InstallerMojo extends SettingsMojo {
      * @throws MojoFailureException
      */
     public void execute() throws MojoExecutionException, MojoFailureException {
-            InstallerConfig config = getInstallerConfig();
-            List<String> bla = config.getIzpackAdditionalPacks();
-            InstallerBuilder builder = new InstallerBuilder(config);
-            builder.execute();
+        InstallerConfig config = getInstallerConfig();
+        Gson g = new GsonBuilder().setPrettyPrinting().create();
+
+        InstallerBuilder builder = new InstallerBuilder(config);
+        builder.execute();
     }
 
     @SuppressWarnings("unchecked")
@@ -46,12 +47,12 @@ public class InstallerMojo extends SettingsMojo {
                 izpackWindowsServicePackName, izpackWindowsServicePackDescription, prunsrvStartupMode, prunsrvServiceName,
                 prunsrvStartClass, prunsrvDaemonLauncherClass, prunsrvStartParams, prunsrvStopClass, prunsrvStopParams, prunsrvJvmMs,
                 prunsrvJvmMx, prunsrvJvmSs, prunsrvDisplayName, prunsrvDescription, prunsrvStopTimeout, prunsrvLogPrefix,
-                prunsrvLogLevel, prunsrvStdOutput, prunsrvStdError, prunsrvStartOnInstrall, izpackDir,distDir,buildUnixDist,
-                prunsrvLogPath,installerOutputFile,buildOutputFile,installConfigFile,
+                prunsrvLogLevel, prunsrvStdOutput, prunsrvStdError, prunsrvStartOnInstrall, izpackDir, distDir, buildUnixDist,
+                prunsrvLogPath, installerOutputFile, buildOutputFile, installConfigFile,
                 izpackOutputFile, use64BitJre, useX86LaunchersForX64Installer, installLauncher64Path, installLauncher32Path,
                 distOutputFile, prunsrvLauncherJarFile, appDataDirs, uninstallLauncher64Path, uninstallLauncher32Path,
                 izpackDefaultInstallDir, prunsrvScriptsEncoding, izpackFrameIconPath, izpackHelloIconPath, izpackAdditionalResourcePaths,
-                izpackCompress, jreDir, project.getArtifact().getFile(), set.stream().map(x-> x.getFile()).collect(Collectors.toList()),
+                izpackCompress, jreDir, project.getArtifact().getFile(), set.stream().map(x -> x.getFile()).collect(Collectors.toList()),
                 izpackAppName, izpackAppVersion, izpackLang, izpackAdditionalPacksPath);
 
     }

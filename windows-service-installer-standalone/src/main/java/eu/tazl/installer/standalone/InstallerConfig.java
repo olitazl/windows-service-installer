@@ -15,73 +15,65 @@ import java.util.List;
  */
 public class InstallerConfig {
 
-    protected final PathMatchingResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
-    protected final ResourceLoader loader = resourcePatternResolver.getResourceLoader();
+    private final transient PathMatchingResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+    private final transient ResourceLoader loader = resourcePatternResolver.getResourceLoader();
 
-
-
-    protected final String izpackAppFilesPackName;
-    protected final String izpackAppFilesPackDescription;
-    protected final String izpackJREPackName;
-    protected final String izpackJREPackDescription;
-    protected final String izpackWindowsServicePackName;
-    protected final String izpackWindowsServicePackDescription;
-    protected final String prunsrvStartupMode;
-    protected final String prunsrvServiceName;
-    protected final String prunsrvStartClass;
-    protected final String prunsrvDaemonLauncherClass;
-    protected final String prunsrvStartParams;
-    protected final String prunsrvStopClass;
+    private final String izpackAppFilesPackName;
+    private final String izpackAppFilesPackDescription;
+    private final String izpackJREPackName;
+    private final String izpackJREPackDescription;
+    private final String izpackWindowsServicePackName;
+    private final String izpackWindowsServicePackDescription;
+    private final String prunsrvStartupMode;
+    private final String prunsrvServiceName;
+    private final String prunsrvStartClass;
+    private final String prunsrvDaemonLauncherClass;
+    private final String prunsrvStartParams;
+    private final String prunsrvStopClass;
     private final String prunsrvStopParams;
-    protected final String prunsrvJvmOptions = "";
-    protected final int prunsrvJvmMs;
-    protected final int prunsrvJvmMx;
-    protected final int prunsrvJvmSs;
-    protected final String prunsrvDisplayName;
-    protected final String prunsrvDescription;
-    protected final int prunsrvStopTimeout;
-    protected final String prunsrvLogPrefix;
-    protected final String prunsrvLogLevel;
-    protected final String prunsrvStdOutput;
-    protected final String prunsrvStdError;
-    protected final boolean prunsrvStartOnInstrall;
-
-    final File izpackDir;
-     final File distDir;
-     final boolean buildUnixDist;
-     final String prunsrvLogPath;
-     final File installerOutputFile;
-     final File buildOutputFile;
-     final File installConfigFile;
-     final File izpackOutputFile;
-     final boolean use64BitJre;
-     final boolean useX86LaunchersForX64Installer;
-     final String installLauncher64Path;
-     final String installLauncher32Path;
-     final File distOutputFile;
-     final String prunsrvLauncherJarFile;
-     final List<String> appDataDirs;
-     final String uninstallLauncher64Path;
-     final String uninstallLauncher32Path;
-     final String izpackDefaultInstallDir;
-     final String prunsrvScriptsEncoding;
-     final String izpackFrameIconPath;
-     final String izpackHelloIconPath;
-     final List<String> izpackAdditionalResourcePaths;
-     final String izpackCompress;
-     final File jreDir;
-     final File artifact;
-     final List<File> libs;
-     final String izpackAppName;
-     final String izpackAppVersion;
-     final String izpackLang;
-     final String izpackAdditionalPacksPath;
+    private final String prunsrvJvmOptions = "";
+    private final int prunsrvJvmMs;
+    private final int prunsrvJvmMx;
+    private final int prunsrvJvmSs;
+    private final String prunsrvDisplayName;
+    private final String prunsrvDescription;
+    private final int prunsrvStopTimeout;
+    private final String prunsrvLogPrefix;
+    private final String prunsrvLogLevel;
+    private final String prunsrvStdOutput;
+    private final String prunsrvStdError;
+    private final boolean prunsrvStartOnInstrall;
 
 
-
-
-
-
+    private final File izpackDir;
+     private final File distDir;
+     private final boolean buildUnixDist;
+     private final String prunsrvLogPath;
+     private final File installerOutputFile;
+     private final File buildOutputFile;
+     private final File installConfigFile;
+     private final File izpackOutputFile;
+     private final boolean use64BitJre;
+     private final boolean useX86LaunchersForX64Installer;
+     private final String installLauncher64Path;
+     private final String installLauncher32Path;
+     private final File distOutputFile;
+     private final String prunsrvLauncherJarFile;
+     private final List<String> appDataDirs;
+     private final String uninstallLauncher64Path;
+     private final String uninstallLauncher32Path;
+     private final String izpackDefaultInstallDir;
+     private final String prunsrvScriptsEncoding;
+     private final String izpackFrameIconPath;
+     private final String izpackHelloIconPath;
+     private final List<String> izpackAdditionalResourcePaths;
+     private final String izpackCompress;
+     private final File jreDir;
+     private final File artifact;
+     private final List<File> libs;
+     private final String izpackAppName;
+     private final String izpackAppVersion;
+     private final String izpackAdditionalPacksPath;
 
     public InstallerConfig(String izpackAppFilesPackName, String izpackAppFilesPackDescription, String izpackJREPackName, String izpackJREPackDescription, String izpackWindowsServicePackName, String izpackWindowsServicePackDescription, String prunsrvStartupMode, String prunsrvServiceName, String prunsrvStartClass, String prunsrvDaemonLauncherClass, String prunsrvStartParams, String prunsrvStopClass, String prunsrvStopParams, int prunsrvJvmMs, int prunsrvJvmMx, int prunsrvJvmSs, String prunsrvDisplayName, String prunsrvDescription, int prunsrvStopTimeout, String prunsrvLogPrefix, String prunsrvLogLevel, String prunsrvStdOutput, String prunsrvStdError, boolean prunsrvStartOnInstrall, File izpackDir, File distDir, boolean buildUnixDist, String prunsrvLogPath,
                            File installerOutputFile, File buildOutputFile, File installConfigFile, File izpackOutputFile,
@@ -144,7 +136,6 @@ public class InstallerConfig {
         this.libs = libs;
         this.izpackAppName = izpackAppName;
         this.izpackAppVersion = izpackAppVersion;
-        this.izpackLang = izpackLang;
         this.izpackAdditionalPacksPath = izpackAdditionalPacksPath;
     }
 

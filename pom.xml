@@ -12,7 +12,7 @@
     <description>
         Maven plugin to build installers with Windows service support.
     </description>
-    <url>https://github.com/alexkasko/windows-service-installer</url>
+    <url>https://github.com/olitazl/windows-service-installer</url>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -99,7 +99,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.2</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
@@ -191,5 +191,10 @@
             </build>
         </profile>
     </profiles>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

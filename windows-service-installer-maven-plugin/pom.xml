@@ -35,12 +35,11 @@
             <version>2.2.1</version>
         </dependency>
         <dependency>
-            <groupId>eu.tazl.installer</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>windows-service-installer-standalone</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-
     <reporting>
         <plugins>
             <plugin>
@@ -50,7 +49,6 @@
             </plugin>
         </plugins>
     </reporting>
- 
     <build>
         <plugins>
             <plugin>

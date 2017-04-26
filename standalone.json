@@ -1,0 +1,73 @@
+
+"izpackAppFilesPackName": "Application Files",
+"izpackAppFilesPackDescription": "Necessary application files",
+"izpackJREPackName": "Java Runtime Environment",
+"izpackJREPackDescription": "Java Runtime Environment",
+"izpackWindowsServicePackName": "Windows Service Installer",
+"izpackWindowsServicePackDescription": "Application will be installed as Windows Service using prunsrv tool from Apache Commons Daemon project, see http://commons.apache.org/daemon",
+"prunsrvStartupMode": "auto",
+"prunsrvServiceName": "windows-service-installer-test",
+"prunsrvStartClass": "com.alexkasko.installer.StandardLauncher",
+"prunsrvDaemonLauncherClass": "eu.tazl.installer.testapp.Launcher",
+"prunsrvStopClass": "eu.tazl.installer.StandardLauncher",
+"prunsrvJvmOptions": "",
+"prunsrvJvmMs": 64,
+"prunsrvJvmMx": 1024,
+"prunsrvJvmSs": 512,
+"prunsrvDisplayName": "Maven Windows Service Installer Test Suite",
+"prunsrvDescription": "Maven Windows Service Installer Test Suite",
+"prunsrvStopTimeout": 0,
+"prunsrvLogPrefix": "daemon",
+"prunsrvLogLevel": "INFO",
+"prunsrvStdOutput": "logs\\std_out.txt",
+"prunsrvStdError": "logs\\std_err.txt",
+"prunsrvStartOnInstrall": true,
+"izpackDir": {
+"path": "/Users/oliveraugusttazl/windows_service/windows-service-installer/windows-service-installer-test/target/izpack"
+},
+"distDir": {
+"path": "/Users/oliveraugusttazl/windows_service/windows-service-installer/windows-service-installer-test/target/izpack/dist"
+},
+"buildUnixDist": false,
+"prunsrvLogPath": "logs",
+"installerOutputFile": {
+"path": "/Users/oliveraugusttazl/windows_service/windows-service-installer/windows-service-installer-test/target/windows-service-installer-test-1.5.0-SNAPSHOT-installer.zip"
+},
+"buildOutputFile": {
+"path": "/Users/oliveraugusttazl/windows_service/windows-service-installer/windows-service-installer-test/target/izpack/build.log"
+},
+"izpackOutputFile": {
+"path": "/Users/oliveraugusttazl/windows_service/windows-service-installer/windows-service-installer-test/target/install.jar"
+},
+"use64BitJre": false,
+"useX86LaunchersForX64Installer": false,
+"installLauncher64Path": "classpath:/launchers/x64/install.exe",
+"installLauncher32Path": "classpath:/launchers/x86/install.exe",
+"distOutputFile": {
+"path": "/Users/oliveraugusttazl/windows_service/windows-service-installer/windows-service-installer-test/target/windows-service-installer-test-dist.tgz"
+},
+"prunsrvLauncherJarFile": "windows-service-installer-test.jar",
+"appDataDirs": [],
+"uninstallLauncher64Path": "classpath:/launchers/x64/uninstall.exe",
+"uninstallLauncher32Path": "classpath:/launchers/x86/uninstall.exe",
+"izpackDefaultInstallDir": "$USER_HOME\\Maven Windows Service Installer Test Suite",
+"prunsrvScriptsEncoding": "UTF-8",
+"izpackFrameIconPath": "classpath:/izpack/install.png",
+"izpackHelloIconPath": "classpath:/izpack/install.png",
+"izpackAdditionalResourcePaths": [],
+"izpackCompress": "raw",
+"jreDir": {
+"path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre"
+},
+"artifact": {
+"path": "/Users/oliveraugusttazl/windows_service/windows-service-installer/windows-service-installer-test/target/windows-service-installer-test-1.5.0-SNAPSHOT.jar"
+},
+"libs": [
+{
+"path": "/Users/oliveraugusttazl/.m2/repository/eu/tazl/installer/windows-service-installer-common/1.5.0-SNAPSHOT/windows-service-installer-common-1.5.0-SNAPSHOT.jar"
+}
+],
+"izpackAppName": "Maven Windows Service Installer Test Suite",
+"izpackAppVersion": "1.5.0-SNAPSHOT",
+"izpackAdditionalPacksPath": "classpath:/izpack/addpacks.xml"
+}
