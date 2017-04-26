@@ -5,8 +5,6 @@ This plugin allows to build installers with support to be installed and run as W
 Installer is based on [izPack](http://izpack.org/), [PrunSrv](http://commons.apache.org/proper/commons-daemon/procrun.html)
 is used for Windows service management.
 
-[Maven-generated site](http://olitazl.github.com/windows-service-installer/plugin).
-
 Plugin usage
 ------------
 
