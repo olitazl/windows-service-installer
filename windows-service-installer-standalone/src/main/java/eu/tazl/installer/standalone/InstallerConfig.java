@@ -369,4 +369,126 @@ public class InstallerConfig {
     public boolean isPrunsrvStartOnInstrall() {
         return prunsrvStartOnInstrall;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        InstallerConfig that = (InstallerConfig) o;
+
+        if (prunsrvJvmMs != that.prunsrvJvmMs) return false;
+        if (prunsrvJvmMx != that.prunsrvJvmMx) return false;
+        if (prunsrvJvmSs != that.prunsrvJvmSs) return false;
+        if (prunsrvStopTimeout != that.prunsrvStopTimeout) return false;
+        if (prunsrvStartOnInstrall != that.prunsrvStartOnInstrall) return false;
+        if (buildUnixDist != that.buildUnixDist) return false;
+        if (use64BitJre != that.use64BitJre) return false;
+        if (useX86LaunchersForX64Installer != that.useX86LaunchersForX64Installer) return false;
+        if (!izpackAppFilesPackName.equals(that.izpackAppFilesPackName)) return false;
+        if (!izpackAppFilesPackDescription.equals(that.izpackAppFilesPackDescription)) return false;
+        if (!izpackJREPackName.equals(that.izpackJREPackName)) return false;
+        if (!izpackJREPackDescription.equals(that.izpackJREPackDescription)) return false;
+        if (!izpackWindowsServicePackName.equals(that.izpackWindowsServicePackName)) return false;
+        if (!izpackWindowsServicePackDescription.equals(that.izpackWindowsServicePackDescription)) return false;
+        if (!prunsrvStartupMode.equals(that.prunsrvStartupMode)) return false;
+        if (!prunsrvServiceName.equals(that.prunsrvServiceName)) return false;
+        if (!prunsrvStartClass.equals(that.prunsrvStartClass)) return false;
+        if (!prunsrvDaemonLauncherClass.equals(that.prunsrvDaemonLauncherClass)) return false;
+        if (prunsrvStartParams != null && !prunsrvStartParams.equals(that.prunsrvStartParams)) return false;
+        if (!prunsrvStopClass.equals(that.prunsrvStopClass)) return false;
+        if (prunsrvStopParams != null && !prunsrvStopParams.equals(that.prunsrvStopParams)) return false;
+        if (!prunsrvJvmOptions.equals(that.prunsrvJvmOptions)) return false;
+        if (!prunsrvDisplayName.equals(that.prunsrvDisplayName)) return false;
+        if (!prunsrvDescription.equals(that.prunsrvDescription)) return false;
+        if (!prunsrvLogPrefix.equals(that.prunsrvLogPrefix)) return false;
+        if (!prunsrvLogLevel.equals(that.prunsrvLogLevel)) return false;
+        if (!prunsrvStdOutput.equals(that.prunsrvStdOutput)) return false;
+        if (!prunsrvStdError.equals(that.prunsrvStdError)) return false;
+        if (!izpackDir.equals(that.izpackDir)) return false;
+        if (!distDir.equals(that.distDir)) return false;
+        if (!prunsrvLogPath.equals(that.prunsrvLogPath)) return false;
+        if (!installerOutputFile.equals(that.installerOutputFile)) return false;
+        if (!buildOutputFile.equals(that.buildOutputFile)) return false;
+        if (installConfigFile != null && !installConfigFile.equals(that.installConfigFile)) return false;
+        if (!izpackOutputFile.equals(that.izpackOutputFile)) return false;
+        if (!installLauncher64Path.equals(that.installLauncher64Path)) return false;
+        if (!installLauncher32Path.equals(that.installLauncher32Path)) return false;
+        if (!distOutputFile.equals(that.distOutputFile)) return false;
+        if (!prunsrvLauncherJarFile.equals(that.prunsrvLauncherJarFile)) return false;
+        if (!appDataDirs.equals(that.appDataDirs)) return false;
+        if (!uninstallLauncher64Path.equals(that.uninstallLauncher64Path)) return false;
+        if (!uninstallLauncher32Path.equals(that.uninstallLauncher32Path)) return false;
+        if (!izpackDefaultInstallDir.equals(that.izpackDefaultInstallDir)) return false;
+        if (!prunsrvScriptsEncoding.equals(that.prunsrvScriptsEncoding)) return false;
+        if (!izpackFrameIconPath.equals(that.izpackFrameIconPath)) return false;
+        if (!izpackHelloIconPath.equals(that.izpackHelloIconPath)) return false;
+        if (!izpackAdditionalResourcePaths.equals(that.izpackAdditionalResourcePaths)) return false;
+        if (!izpackCompress.equals(that.izpackCompress)) return false;
+        if (!jreDir.equals(that.jreDir)) return false;
+        if (!artifact.equals(that.artifact)) return false;
+        if (!libs.equals(that.libs)) return false;
+        if (!izpackAppName.equals(that.izpackAppName)) return false;
+        if (!izpackAppVersion.equals(that.izpackAppVersion)) return false;
+        return izpackAdditionalPacksPath.equals(that.izpackAdditionalPacksPath);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = izpackAppFilesPackName.hashCode();
+        result = 31 * result + izpackAppFilesPackDescription.hashCode();
+        result = 31 * result + izpackJREPackName.hashCode();
+        result = 31 * result + izpackJREPackDescription.hashCode();
+        result = 31 * result + izpackWindowsServicePackName.hashCode();
+        result = 31 * result + izpackWindowsServicePackDescription.hashCode();
+        result = 31 * result + prunsrvStartupMode.hashCode();
+        result = 31 * result + prunsrvServiceName.hashCode();
+        result = 31 * result + prunsrvStartClass.hashCode();
+        result = 31 * result + prunsrvDaemonLauncherClass.hashCode();
+        result = 31 * result + prunsrvStartParams.hashCode();
+        result = 31 * result + prunsrvStopClass.hashCode();
+        result = 31 * result + prunsrvStopParams.hashCode();
+        result = 31 * result + prunsrvJvmOptions.hashCode();
+        result = 31 * result + prunsrvJvmMs;
+        result = 31 * result + prunsrvJvmMx;
+        result = 31 * result + prunsrvJvmSs;
+        result = 31 * result + prunsrvDisplayName.hashCode();
+        result = 31 * result + prunsrvDescription.hashCode();
+        result = 31 * result + prunsrvStopTimeout;
+        result = 31 * result + prunsrvLogPrefix.hashCode();
+        result = 31 * result + prunsrvLogLevel.hashCode();
+        result = 31 * result + prunsrvStdOutput.hashCode();
+        result = 31 * result + prunsrvStdError.hashCode();
+        result = 31 * result + (prunsrvStartOnInstrall ? 1 : 0);
+        result = 31 * result + izpackDir.hashCode();
+        result = 31 * result + distDir.hashCode();
+        result = 31 * result + (buildUnixDist ? 1 : 0);
+        result = 31 * result + prunsrvLogPath.hashCode();
+        result = 31 * result + installerOutputFile.hashCode();
+        result = 31 * result + buildOutputFile.hashCode();
+        result = 31 * result + installConfigFile.hashCode();
+        result = 31 * result + izpackOutputFile.hashCode();
+        result = 31 * result + (use64BitJre ? 1 : 0);
+        result = 31 * result + (useX86LaunchersForX64Installer ? 1 : 0);
+        result = 31 * result + installLauncher64Path.hashCode();
+        result = 31 * result + installLauncher32Path.hashCode();
+        result = 31 * result + distOutputFile.hashCode();
+        result = 31 * result + prunsrvLauncherJarFile.hashCode();
+        result = 31 * result + appDataDirs.hashCode();
+        result = 31 * result + uninstallLauncher64Path.hashCode();
+        result = 31 * result + uninstallLauncher32Path.hashCode();
+        result = 31 * result + izpackDefaultInstallDir.hashCode();
+        result = 31 * result + prunsrvScriptsEncoding.hashCode();
+        result = 31 * result + izpackFrameIconPath.hashCode();
+        result = 31 * result + izpackHelloIconPath.hashCode();
+        result = 31 * result + izpackAdditionalResourcePaths.hashCode();
+        result = 31 * result + izpackCompress.hashCode();
+        result = 31 * result + jreDir.hashCode();
+        result = 31 * result + artifact.hashCode();
+        result = 31 * result + libs.hashCode();
+        result = 31 * result + izpackAppName.hashCode();
+        result = 31 * result + izpackAppVersion.hashCode();
+        result = 31 * result + izpackAdditionalPacksPath.hashCode();
+        return result;
+    }
 }

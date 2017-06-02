@@ -35,6 +35,8 @@ public class InstallerMojo extends SettingsMojo {
         InstallerConfig config = getInstallerConfig();
         Gson g = new GsonBuilder().setPrettyPrinting().create();
 
+        InstallerConfig c = g.fromJson(g.toJson(config), InstallerConfig.class);
+
         InstallerBuilder builder = new InstallerBuilder(config);
         builder.execute();
     }
