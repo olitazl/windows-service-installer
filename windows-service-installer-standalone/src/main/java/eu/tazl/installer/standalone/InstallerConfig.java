@@ -74,8 +74,17 @@ public class InstallerConfig {
      private final String izpackAppName;
      private final String izpackAppVersion;
      private final String izpackAdditionalPacksPath;
+     private final String izpackLang;
 
-    public InstallerConfig(String izpackAppFilesPackName, String izpackAppFilesPackDescription, String izpackJREPackName, String izpackJREPackDescription, String izpackWindowsServicePackName, String izpackWindowsServicePackDescription, String prunsrvStartupMode, String prunsrvServiceName, String prunsrvStartClass, String prunsrvDaemonLauncherClass, String prunsrvStartParams, String prunsrvStopClass, String prunsrvStopParams, int prunsrvJvmMs, int prunsrvJvmMx, int prunsrvJvmSs, String prunsrvDisplayName, String prunsrvDescription, int prunsrvStopTimeout, String prunsrvLogPrefix, String prunsrvLogLevel, String prunsrvStdOutput, String prunsrvStdError, boolean prunsrvStartOnInstrall, File izpackDir, File distDir, boolean buildUnixDist, String prunsrvLogPath,
+    public InstallerConfig(String izpackAppFilesPackName, String izpackAppFilesPackDescription, String izpackJREPackName,
+                           String izpackJREPackDescription, String izpackWindowsServicePackName,
+                           String izpackWindowsServicePackDescription, String prunsrvStartupMode,
+                           String prunsrvServiceName, String prunsrvStartClass, String prunsrvDaemonLauncherClass,
+                           String prunsrvStartParams, String prunsrvStopClass, String prunsrvStopParams,
+                           int prunsrvJvmMs, int prunsrvJvmMx, int prunsrvJvmSs, String prunsrvDisplayName,
+                           String prunsrvDescription, int prunsrvStopTimeout, String prunsrvLogPrefix,
+                           String prunsrvLogLevel, String prunsrvStdOutput, String prunsrvStdError,
+                           boolean prunsrvStartOnInstrall, File izpackDir, File distDir, boolean buildUnixDist, String prunsrvLogPath,
                            File installerOutputFile, File buildOutputFile, File installConfigFile, File izpackOutputFile,
                            boolean use64BitJre, boolean useX86LaunchersForX64Installer, String installLauncher64Path,
                            String installLauncher32Path, File distOutputFile, String prunsrvLauncherJarFile,
@@ -137,6 +146,7 @@ public class InstallerConfig {
         this.izpackAppName = izpackAppName;
         this.izpackAppVersion = izpackAppVersion;
         this.izpackAdditionalPacksPath = izpackAdditionalPacksPath;
+        this.izpackLang = izpackLang;
     }
 
     public File getIzpackDir() {
@@ -368,6 +378,10 @@ public class InstallerConfig {
 
     public boolean isPrunsrvStartOnInstrall() {
         return prunsrvStartOnInstrall;
+    }
+
+    public String getIzpackLang() {
+        return izpackLang;
     }
 
     @Override

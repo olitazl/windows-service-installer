@@ -203,7 +203,7 @@ public abstract class SettingsMojo extends AbstractMojo {
     /**
      * Start class that will be used with prunsrv
      *
-     * @parameter property="installer.prunsrvStartClass" default-value="com.alexkasko.installer.StandardLauncher"
+     * @parameter property="installer.prunsrvStartClass" default-value="eu.tazl.installer.StandardLauncher"
      */
     protected String prunsrvStartClass;
     /**

@@ -48,6 +48,7 @@ public class InstallerBuilder  {
 
     public InstallerBuilder(InstallerConfig config){
         this.config = config;
+        //System.out.println(this.config.toString());
     }
 
     public void execute() {

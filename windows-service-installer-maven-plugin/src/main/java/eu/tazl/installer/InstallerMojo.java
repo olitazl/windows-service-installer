@@ -32,6 +32,7 @@ public class InstallerMojo extends SettingsMojo {
      * @throws MojoFailureException
      */
     public void execute() throws MojoExecutionException, MojoFailureException {
+        System.out.println("bla");
         InstallerConfig config = getInstallerConfig();
         Gson g = new GsonBuilder().setPrettyPrinting().create();
 

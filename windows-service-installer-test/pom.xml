@@ -65,6 +65,7 @@
                 </dependencies>
                 <configuration>
                     <prunsrvDaemonLauncherClass>${service.main.class}</prunsrvDaemonLauncherClass>
+                    <use64BitJre>true</use64BitJre>
                 </configuration>
             </plugin>
         </plugins>
